@@ -1,0 +1,274 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+    color: #202124;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    background: #e8491d;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* ヘッダー部分 */
+#codelab-title {
+    background-color: #4F7DC9;
+    color: #ffffff;
+    padding: 16px 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#codelab-nav-buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#codelab-nav-buttons a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#codelab-title h1.title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.codelab-time-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.time-remaining {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.time-remaining i {
+    margin-right: 5px;
+}
+
+/* メイン部分 */
+#main {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 60px - 50px); /* ヘッダーとフッターの高さを引く */
+    overflow: hidden;
+}
+
+/* サイドバー部分 */
+#drawer {
+    width: 256px;
+    background-color: #f1f3f4;
+    border-right: 1px solid #dadce0;
+    padding: 16px 0;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.steps {
+    padding: 0;
+}
+
+.steps ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.steps li {
+    padding: 0;
+}
+
+.steps li a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #202124;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.steps li a:hover {
+    background-color: #e0e0e0;
+}
+
+.steps li a.active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.step span {
+    display: block;
+}
+
+/* ステップコンテンツ部分 */
+#steps {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 32px 48px;
+}
+
+.step-section {
+    display: none;
+    animation: fadeIn 0.5s;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step-section.active {
+    display: block;
+}
+
+.step-title {
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #dadce0;
+    padding-bottom: 8px;
+    color: #3c4043;
+}
+
+/* コードブロック */
+pre {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    color: #37474f;
+}
+
+/* インフォボックス */
+.infobox {
+    background-color: #e8f0fe;
+    border-left: 4px solid #1a73e8;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 4px;
+}
+
+.infobox p {
+    margin: 0;
+}
+
+.infobox.warning {
+    background-color: #fef7e0;
+    border-left-color: #f9ab00;
+}
+
+.infobox.tip {
+    background-color: #e6f4ea;
+    border-left-color: #34a853;
+}
+
+/* スクリーンショット画像 */
+.screenshot {
+    max-width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* ボタン */
+.button-container {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0d66d0;
+}
+
+/* フッター */
+footer {
+    background-color: #f1f3f4;
+    color: #5f6368;
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+    border-top: 1px solid #dadce0;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* モバイルレスポンシブ対応 */
+@media (max-width: 768px) {
+    #main {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #drawer {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #dadce0;
+        padding: 8px 0;
+    }
+    
+    #steps {
+        padding: 16px;
+    }
+}
