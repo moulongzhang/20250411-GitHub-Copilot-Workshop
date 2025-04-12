@@ -8,7 +8,7 @@
 ## ハンズオン2：Copilot Metrics API
 ソースコード：https://github.com/microsoft/copilot-metrics-dashboard
 
-手順書：https://moulongzhang.github.io/20250411-GitHub-Copilot-Workshop/
+手順書：https://moulongzhang.github.io/20250414-GitHub-Copilot-Workshop/
 
 サンプルダッシュボード：https://copilot-dash-2025-dashboard-63qgfj6frmb26.azurewebsites.net/
 # My Website
