@@ -1,4 +1,4 @@
-# 20250411-GitHub-Copilot-Workshop
+# 20250414-GitHub-Copilot-Workshop
 
 ## ハンズオン１：じゃんけんゲーム
 ソースコード：https://github.com/copilot-workshops
