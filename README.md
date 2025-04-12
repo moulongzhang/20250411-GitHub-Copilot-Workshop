@@ -6,7 +6,7 @@
 手順書：https://github.github.com/workshops/copilot-for-dev-ja
 
 ## ハンズオン2：Copilot Metrics API
-ソースコード：https://github.com/microsoft/copilot-metrics-dashboard
+ソースコード：https://github.com/moulongzhang/copilot-metrics-dashboard
 
 手順書：https://moulongzhang.github.io/20250414-GitHub-Copilot-Workshop/
 
