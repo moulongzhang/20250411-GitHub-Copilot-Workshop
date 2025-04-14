@@ -17,7 +17,7 @@
     </div>
     <h1 class="title">Copilot Metrics ダッシュボード ワークショップ</h1>
     <div class="codelab-time-container">
-      <div class="time-remaining" title="所要時間"><i class="material-icons">access_time</i>60分</div>
+      <div class="time-remaining" title="所要時間"><i class="material-icons">access_time</i>30分</div>
     </div>
   </div>
   
@@ -27,9 +27,9 @@
         <ol>
           <li><a href="#step1"><span class="step"><span>ワークショップについて</span></span></a></li>
           <li><a href="#step2"><span class="step"><span>Copilot Metricsの概要</span></span></a></li>
-          <li><a href="#step3"><span class="step"><span>ダッシュボードのセットアップ</span></span></a></li>
-          <li><a href="#step4"><span class="step"><span>データの取得と表示</span></span></a></li>
-          <li><a href="#step5"><span class="step"><span>カスタマイズと拡張</span></span></a></li>
+          <li><a href="#step3"><span class="step"><span>前提条件のセットアップ</span></span></a></li>
+          <li><a href="#step4"><span class="step"><span>ダッシュボードのセットアップ</span></span></a></li>
+          <li><a href="#step5"><span class="step"><span>データの取得と表示</span></span></a></li>
         </ol>
       </div>
     </div>
@@ -37,110 +37,137 @@
     <div id="steps">
       <div id="step1" class="step-section">
         <h2 class="step-title">ワークショップについて</h2>
-        <p>このワークショップでは、<a href="https://github.com/microsoft/copilot-metrics-dashboard" target="_blank">GitHub Copilot Metrics ダッシュボード</a>の設定と使用方法を学びます。</p>
-        <p>Copilot Metricsは、GitHubのCopilot機能の利用状況を分析し、開発チームの生産性向上を測定するためのツールです。</p>
+        <p>このワークショップでは、GitHub Copilot Metrics ダッシュボードの設定と使用方法を学びます。</p>
+        <p>GitHub Copilot Metrics APIは、GitHub Copilotの利用状況を分析し、開発チームの生産性向上を測定するためのツールです。</p>
         <img src="assets/image.png" alt="ダッシュボードのプレビュー" class="screenshot">
       </div>
 
       <div id="step2" class="step-section">
         <h2 class="step-title">Copilot Metricsの概要</h2>
-        <p>Copilot Metrics ダッシュボードは以下の機能を提供します：</p>
+        
+        <h3>GitHub Copilot Metrics API</h3>
+        <p>GitHub Copilot Metrics APIは、組織内でのGitHub Copilotの使用状況データを提供するAPIサービスです。</p>
         <ul>
-          <li>チーム全体のCopilot使用率の可視化</li>
-          <li>コード補完の採用率とその効果の測定</li>
-          <li>開発者の生産性向上の定量化</li>
-          <li>カスタムメトリクスの追加と分析</li>
+          <li>開発者のCopilot利用頻度の測定</li>
+          <li>コード補完の採用率の追跡</li>
+          <li>組織全体の導入状況の把握</li>
+          <li>チーム間の利用パターンの比較</li>
         </ul>
+        
+        <h3>copilot-metrics-dashboard</h3>
+        <p>copilot-metrics-dashboardは、Metrics APIから得られたデータを視覚化するツールです。</p>
+        <ul>
+          <li>チーム全体のCopilot使用率のグラフ表示</li>
+          <li>コード補完の効果を測定するダッシュボード</li>
+          <li>開発者の生産性向上の定量的な分析</li>
+        </ul>
+        
         <div class="infobox">
-          <p><strong>注意:</strong> このツールはGitHubの公式提供であり、組織内のCopilot利用状況を理解するのに役立ちます。</p>
+            <p><strong>注意:</strong> このダッシュボードは<a href="https://github.com/microsoft/copilot-metrics-dashboard" target="_blank">Microsoftが公式提供</a>しており、ハンズオン向けに修正ものになります。MITライセンスの下で提供されており、利用にあたってはライセンス条項に従ってください。</p>
         </div>
       </div>
-
       <div id="step3" class="step-section">
-        <h2 class="step-title">ダッシュボードのセットアップ</h2>
-        <h3>前提条件</h3>
-        <ul>
-          <li>Node.js 16.x以上</li>
-          <li>npm 8.x以上</li>
-          <li>GitHub Personal Access Token（読み取り権限付き）</li>
-        </ul>
-        
-        <h3>インストール手順</h3>
-        <pre><code>git clone https://github.com/microsoft/copilot-metrics-dashboard.git
-cd copilot-metrics-dashboard
-npm install</code></pre>
-        
-        <h3>設定ファイルの作成</h3>
-        <pre><code>cp .env.example .env
-# .envファイルを編集してGitHub Personal Access Tokenを設定</code></pre>
-        
-        <div class="infobox warning">
-          <p><strong>警告:</strong> Personal Access Tokenは安全に保管し、リポジトリにコミットしないでください。</p>
-        </div>
-      </div>
-
-      <div id="step4" class="step-section">
-        <h2 class="step-title">データの取得と表示</h2>
-        <p>ダッシュボードを起動して、Copilotメトリクスの取得と表示を行います：</p>
-        
-        <pre><code>npm start</code></pre>
-        
-        <p>ブラウザが自動的に開き、<code>http://localhost:3000</code>でダッシュボードが表示されます。</p>
-        
-        <h3>データ収集の設定</h3>
-        <p>データ収集の範囲とリポジトリの設定は以下の手順で行います：</p>
+        <h2 class="step-title">前提条件のセットアップ</h2>
+        <h3>1. Personal Access Token (PAT) の発行</h3>
+        <p>Copilot Metrics APIにアクセスするには、適切な権限を持ったPATが必要です。</p>
         <ol>
-          <li>ダッシュボード上部の「設定」ボタンをクリック</li>
-          <li>対象となる組織とリポジトリを選択</li>
-          <li>データ収集期間を設定</li>
-          <li>「適用」ボタンをクリックして設定を保存</li>
+          <li>[設定] &gt;&gt; [&lt;&gt;開発者設定] &gt;&gt; Personal access tokens &gt;&gt; [トークン (クラシック)]から作成が可能</li>
+          <li>以下のスコープを有効にしてPATを発行：
+            <ul>
+              <li>manage_billing:copilot, read:org </li>
+              <li>または read:enterprise</li>
+            </ul>
+          </li>
         </ol>
         
-        <div class="infobox tip">
-          <p><strong>ヒント:</strong> 初回のデータ収集には時間がかかる場合があります。GitHubのAPI制限に注意してください。</p>
+        <h3>2. Copilot Metrics APIの許可</h3>
+        <p>組織レベルでCopilot Metrics APIへのアクセスを有効化する必要があります。</p>
+        <ol>
+          <li>組織 &gt;&gt; 設定 &gt;&gt; Copilot &gt;&gt; Policies &gt;&gt; Copilot Metrics API Access を有効化</li>
+        </ol>
+        
+        <div class="infobox">
+          <p><strong>重要:</strong> これらの設定が完了していないと、Copilot Metricsのデータが取得できません。</p>
         </div>
+      </div>
+      <div id="step4" class="step-section">
+        <h2 class="step-title">ダッシュボードのセットアップ</h2>        
+        <h3>インストール手順</h3>
+          <h4>オプション1: GitHub Codespacesを使用 (推奨)</h4>
+          <ol>
+            <li><a href="https://github.com/moulongzhang/copilot-metrics-dashboard" target="_blank">moulongzhang/copilot-metrics-dashboard</a>リポジトリにアクセス</li>
+            <li>「Code」ボタンをクリック</li>
+            <li>「Codespaces」タブを選択</li>
+            <li>「Create codespace on main」をクリックして新しいCodespaceを起動</li>
+          </ol>
+
+          <h4>オプション2: ローカルインストール</h4>
+          <pre><code>git clone https://github.com/moulongzhang/copilot-metrics-dashboard.git
+        </code></pre>
+    
+    <h3>設定ファイルの作成</h3>
+    <pre><code>cd copilot-metrics-dashboard/src/dashboard
+cp .env.example .env.local</code></pre>
+    
+    <h3>設定例 (.env.localファイルの内容)</h3>
+      <pre>
+        <code># 以下は例です。実際の値に置き換えてください
+          NEXT_PUBLIC_GITHUB_ENTERPRISE={your-enterprise-name}
+          NEXT_PUBLIC_GITHUB_ORGANIZATION={your-organization-name}
+          NEXT_PUBLIC_GITHUB_TOKEN={your-github-PAT}
+          NEXT_PUBLIC_GITHUB_API_VERSION=2022-11-28
+          NEXT_PUBLIC_GITHUB_API_SCOPE=organization
+        </code>
+      </pre>        
+      <div class="infobox warning">
+        <p><strong>警告:</strong> Personal Access Tokenは安全に保管し、リポジトリにコミットしないでください。</p>
+      </div>
       </div>
 
       <div id="step5" class="step-section">
-        <h2 class="step-title">カスタマイズと拡張</h2>
-        <p>ダッシュボードは様々な方法でカスタマイズできます：</p>
+        <h2 class="step-title">データの取得と表示</h2>
+        <p>ダッシュボードを起動して、Copilotメトリクスの取得と表示を行います：</p>
         
-        <h3>カスタムメトリクスの追加</h3>
-        <pre><code>// 新しいメトリクスコンポーネントの作成例
-import React from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core';
-
-const CustomMetric = ({ data }) => {
-  // データ処理ロジック
-  
-  return (
-    &lt;Card&gt;
-      &lt;CardContent&gt;
-        &lt;Typography variant="h6"&gt;カスタムメトリクス&lt;/Typography&gt;
-        &lt;Typography variant="h4"&gt;{calculatedValue}&lt;/Typography&gt;
-      &lt;/CardContent&gt;
-    &lt;/Card&gt;
-  );
-}</code></pre>
+        <pre><code>npm install
+npm run dev</code></pre>
         
-        <h3>ダッシュボードのカスタマイズ方法</h3>
-        <ul>
-          <li>src/components/フォルダ内のコンポーネントをカスタマイズ</li>
-          <li>新しいチャートやグラフをsrc/charts/に追加</li>
-          <li>src/pages/内でページレイアウトを変更</li>
-        </ul>
-        
-        <div class="infobox">
-          <p><strong>さらに詳しく:</strong> カスタマイズについての詳細は<a href="https://github.com/microsoft/copilot-metrics-dashboard/blob/main/docs/CUSTOMIZATION.md" target="_blank">公式ドキュメント</a>を参照してください。</p>
+        <p><code>http://localhost:3000</code>でダッシュボードが表示されます。</p>
+      
+        <div class="infobox tip">
+          <p><strong>ヒント:</strong> 初回のデータ収集には時間がかかる場合があります。</p>
         </div>
-        
+
+
+        <h3 class="step-title">ダッシュボードの主な機能</h2>
+        <p>ダッシュボードには以下の機能が含まれています:</p>
+      
+        <h3>フィルタリング機能</h3>
+        <ul>
+          <li>日付範囲によるフィルタリング</li>
+          <li>プログラミング言語によるフィルタリング</li>
+          <li>コードエディタによるフィルタリング</li>
+          <li>時間枠（日次、週次、月次）による表示切替</li>
+        </ul>
+      
+        <h3>主要メトリクス</h3>
+        <ul>
+          <li><strong>受け入れ率平均:</strong> ユーザーが受け入れた提案の割合</li>
+          <li><strong>アクティブユーザー数:</strong> 最新のサイクルでのアクティブユーザー数</li>
+          <li><strong>採用率:</strong> ライセンスされたユーザー総数に対するGitHub Copilotを使用しているアクティブユーザーの割合</li>
+          <li><strong>シート情報:</strong> アクティブ、非アクティブ、および総ユーザー数</li>
+          <li><strong>言語別内訳:</strong> データをフィルタリングできる言語の内訳</li>
+          <li><strong>エディタ別内訳:</strong> データをフィルタリングできるコードエディタの内訳</li>
+        </ul>
+      
+        <h3>シート管理</h3>
+        <ul>
+          <li>Copilotライセンスが割り当てられているユーザーのリストを表示</li>
+        </ul>
         <div class="button-container">
           <button id="complete-workshop" class="button">ワークショップを完了</button>
         </div>
       </div>
     </div>
-  </div>
-
   <footer>
     <p>&copy; 2025 Copilot Metrics ワークショップ</p>
   </footer>

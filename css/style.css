@@ -93,6 +93,9 @@ nav a:hover {
     flex-direction: row;
     height: calc(100vh - 60px - 50px); /* ヘッダーとフッターの高さを引く */
     overflow: hidden;
+    overflow: visible; /* overflowをvisibleに変更 */
+    position: relative; /* 位置関係を明確にする */
+    flex-wrap: wrap; /* 子要素が折り返せるようにする */
 }
 
 /* サイドバー部分 */
@@ -246,6 +249,9 @@ footer {
     padding: 16px;
     font-size: 14px;
     border-top: 1px solid #dadce0;
+    clear: both;
+    position: relative;
+    width: 100%
 }
 
 /* アニメーション */
