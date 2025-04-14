@@ -1,7 +1,7 @@
 # 20250414-GitHub-Copilot-Workshop
 
 ## 本日のURL一覧
-https://github.com/moulongzhang/20250414-GitHub-Copilot-Workshop/edit/main/README.md
+https://github.com/moulongzhang/20250414-GitHub-Copilot-Workshop
 
 
 
